@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
-const Card = ({ title, description, imageSrc, backgroundColor }) => {
+const Card = ({ index, title, description, imageSrc, backgroundColor }) => {
     const container = useRef(null)
     const { scrollYProgress } = useScroll({
         target: container,
@@ -15,7 +15,7 @@ const Card = ({ title, description, imageSrc, backgroundColor }) => {
 
     return (
         <div ref={container} className='h-screen flex items-center justify-center sticky top-0'>
-            <div style={{ backgroundColor: backgroundColor }} className="h-[500px] w-[1000px] rounded-xl p-10">
+            <div style={{ backgroundColor: backgroundColor, top: `calc(-10% + ${index * 25}px)` }} className="h-[500px] w-[1000px] rounded-xl p-10 relative">
                 <h3 className="text-2xl text-center font-bold">{title}</h3>
                 <div className="flex justify-between items-center h-full">
                     <p>{description}</p>

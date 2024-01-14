@@ -7,7 +7,7 @@ export default function Home() {
     <main className="mt-[50vh] mb-[100vh]">
       {
         cardsData.map((data, index) => {
-         return <Card key={index} {...data} />
+         return <Card key={index} index={index} {...data} />
         })
       }
     </main>
