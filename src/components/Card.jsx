@@ -17,9 +17,9 @@ const Card = ({ index, title, description, imageSrc, backgroundColor, progress, 
     return (
         <div ref={container} className='h-screen flex items-center justify-center sticky top-0'>
             <motion.div style={{ scale: cardScale, backgroundColor: backgroundColor, top: `calc(-10% + ${index * 25}px)` }} className="h-[500px] w-[1000px] rounded-xl p-10 relative">
-                <h3 className="text-2xl text-center font-bold">{title}</h3>
+                <h3 className="text-2xl text-center font-bold text-black">{title}</h3>
                 <div className="md:flex justify-between items-center h-full">
-                    <p>{description}</p>
+                    <p className='text-2xl text-black'>{description}</p>
                     <div className="h-[80%] w-[100%] md:w-[60%] overflow-hidden relative m-3">
                         <motion.div style={{ scale: imageScale }} className="w-full h-full">
                             <Image
