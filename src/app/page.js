@@ -1,7 +1,15 @@
+import Card from "@/components/Card"
+import { cardsData } from "@/data"
+
 export default function Home() {
+  console.log(cardsData)
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello</h1>
+    <main className="">
+      {
+        cardsData.map((data, index) => {
+         return <Card key={index} {...data} />
+        })
+      }
     </main>
   )
 }
